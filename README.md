@@ -4,7 +4,9 @@ Mundo Encantado (Role-Playing Game) project for "[Programación II](https://secr
 
 # Building The Project
 
---------------------------------------------
+Run the following command to compile every .java into a .class file: `javac -d ./build *.java`
+
+Now you can run `java MundoEncantado [args]` inside the build directory to run the game.
 
 # About The Code
 
