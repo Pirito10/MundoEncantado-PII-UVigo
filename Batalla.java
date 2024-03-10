@@ -14,14 +14,12 @@ public class Batalla {
 			String nombreFichero, int numLinea, boolean partida, int numBatalla) {
 
 		// Asignacion Criaturas (sin reparto)
-
 		if (reparto == false) {
 			if (bosque.getNumCriaturas() < jugadores.getNumJugadores()) {
 				return;
 			}
 
 			for (i = 0; i < 3; i++) {
-
 				for (j = 0; j < jugadores.getNumJugadores(); j++) {
 					if (bosque.getNumCriaturas() == 0) {
 						break;
@@ -31,26 +29,19 @@ public class Batalla {
 				}
 			} // Con reparto
 		} else {
-
 			new Reparto(nombreFichero, numLinea, bosque, jugadores);
-
 		}
 
 		// Escritura informacion inicial de la batalla
-
 		for (i = 0; i < jugadores.getNumJugadores(); i++) {
-
 			for (j = 0; j < jugadores.getJugador(i).getNumCriaturas(); j++) {
-
 				if (j == 0) {
-
 					criaturasIniciales = "(" + jugadores.getJugador(i).getCriatura(j).getID() + ","
 							+ jugadores.getJugador(i).getCriatura(j).getSalud() + ")";
 				} else {
 					criaturasIniciales = criaturasIniciales + ",(" + jugadores.getJugador(i).getCriatura(j).getID()
 							+ "," + jugadores.getJugador(i).getCriatura(j).getSalud() + ")";
 				}
-
 			}
 
 			if (i == 0) {
@@ -64,11 +55,7 @@ public class Batalla {
 		resultadoBatalla = "BATALLA_" + numBatalla + " " + jugadoresIniciales;
 
 		// Comprobacion jugadores inactivos
-
 		for (i = 0; i < jugadores.getNumJugadores(); i++) {
-
-			jugadores.getJugador(i).setInactividad(true);
-
 			jugadores.getJugador(i).setInactividad(false);
 			todasMuertas = true;
 
@@ -84,7 +71,6 @@ public class Batalla {
 		}
 
 		// Lista jugadores activos
-
 		ArrayList<Jugador> jugadoresActivos = new ArrayList<Jugador>();
 
 		for (i = 0; i < jugadores.getNumJugadores(); i++) {
@@ -94,11 +80,9 @@ public class Batalla {
 		}
 
 		// Batalla
-
 		while (fin == false) {
 
 			// Hay 0 jugadores? Se termina la batalla
-
 			if (jugadoresActivos.size() == 0) {
 				fin = true;
 				finBatalla = "  FIN BATALLA: No hay jugadores activos.";
@@ -116,7 +100,6 @@ public class Batalla {
 			}
 
 			// Comprobacion jugadores activos
-
 			numJug = 0;
 			j0 = false;
 			j1 = false;
@@ -154,7 +137,6 @@ public class Batalla {
 			}
 
 			// Eliminar los inactivos
-
 			if (j3 == true) {
 				jugadoresActivos.remove(3);
 			}
@@ -169,7 +151,6 @@ public class Batalla {
 			}
 
 			// Hay 0 jugadores? Se termina la batalla
-
 			if (jugadoresActivos.size() == 0) {
 				fin = true;
 				finBatalla = "  FIN BATALLA: No hay jugadores activos.";
@@ -184,12 +165,10 @@ public class Batalla {
 
 				resultadoBatalla = resultadoBatalla + "\n" + resultadoLucha + "\n" + finBatalla + "\n"
 						+ puntosConseguidos + "\n";
-				;
 				break;
 			}
 
 			// Hay 1 jugador? Se le dan puntos y se termina la batalla
-
 			if (jugadoresActivos.size() == 1) {
 
 				fin = true;
@@ -204,9 +183,7 @@ public class Batalla {
 				finBatalla = "  FIN BATALLA: Solo hay un jugador activo.";
 
 				for (i = 0; i < jugadores.getNumJugadores(); i++) {
-
 					if (jugadores.getJugador(i).getID().equals(jugadoresActivos.get(0).getID())) {
-
 						if (i == 0) {
 							puntosConseguidos = "  PUNTOS CONSEGUIDOS: " + jugadores.getJugador(i).getID() + "="
 									+ puntosGanados;
@@ -215,7 +192,6 @@ public class Batalla {
 									+ puntosGanados;
 						}
 					} else {
-
 						if (i == 0) {
 							puntosConseguidos = "  PUNTOS CONSEGUIDOS: " + jugadores.getJugador(i).getID() + "=0";
 						} else {
@@ -225,12 +201,10 @@ public class Batalla {
 				}
 				resultadoBatalla = resultadoBatalla + "\n" + resultadoLucha + "\n" + finBatalla + "\n"
 						+ puntosConseguidos + "\n";
-				;
 				break;
 			}
 
 			// Asignar jugadores
-
 			if (n == 0) {
 				jugadorAtacante = jugadoresActivos.get(0);
 				jugadorAtacante.setAtaco(true);
@@ -241,7 +215,6 @@ public class Batalla {
 				ListIterator<Jugador> it = jugadoresActivos.listIterator();
 
 				while (it.hasNext()) {
-
 					Jugador j = it.next();
 
 					if (j.getAtaco() == true) {
@@ -268,29 +241,13 @@ public class Batalla {
 						jugadorAtacante.setAtaco(true);
 						jugadorDefensor = jugadoresActivos.get(1);
 					}
-
 				}
 			}
 
-			/*
-			 * switch (jugadoresActivos.size()) { case 2: if (n >= 2) { n = 0; } if (n == 1)
-			 * { jugadorAtacante = jugadoresActivos.get(0); jugadorDefensor =
-			 * jugadoresActivos.get(1); n++; } else { jugadorAtacante =
-			 * jugadoresActivos.get(1); jugadorDefensor = jugadoresActivos.get(0); n++; }
-			 * 
-			 * break; case 3: if (n >= 3) { n = 0; } jugadorAtacante =
-			 * jugadoresActivos.get(n); if (n == 2) { jugadorDefensor =
-			 * jugadoresActivos.get(0); n = 0; } else { jugadorDefensor =
-			 * jugadoresActivos.get(n + 1); n++; } break; case 4: if (n >= 4) { n = 0; }
-			 * jugadorAtacante = jugadoresActivos.get(n); if (n == 3) { jugadorDefensor =
-			 * jugadoresActivos.get(0); n = 0; } else { jugadorDefensor =
-			 * jugadoresActivos.get(n + 1); n++; } break; }
-			 */
 			jugadorAtacante.ordenarPO();
 			jugadorDefensor.ordenarCD();
 
 			// Asignacion criatura atacante/defensora
-
 			for (i = 0; i < jugadorAtacante.getNumCriaturas(); i++) {
 				if (jugadorAtacante.getCriatura(i).getSalud() > 0) {
 					criaturaAtacante = jugadorAtacante.getCriatura(i);
@@ -303,11 +260,9 @@ public class Batalla {
 					criaturaDefensora = jugadorDefensor.getCriatura(i);
 					break;
 				}
-
 			}
 
 			// Escribir estado inicial de la lucha
-
 			if (numLuchas == 0) {
 				resultadoLucha = "  LUCHA " + (numLuchas + 1) + ": " + jugadorAtacante.getID() + "-" + criaturaAtacante
 						+ " --> " + jugadorDefensor.getID() + "-" + criaturaDefensora + "\n";
@@ -317,24 +272,18 @@ public class Batalla {
 			}
 
 			// Lucha
-
 			criaturaAtacante.atacar(criaturaDefensora);
 
 			// Escribir resultados de la lucha
-
 			for (i = 0; i < jugadores.getNumJugadores(); i++) {
-
 				for (j = 0; j < jugadores.getJugador(i).getNumCriaturas(); j++) {
-
 					if (j == 0) {
-
 						criaturasFinales = "(" + jugadores.getJugador(i).getCriatura(j).getID() + ","
 								+ jugadores.getJugador(i).getCriatura(j).getSalud() + ")";
 					} else {
 						criaturasFinales = criaturasFinales + ",(" + jugadores.getJugador(i).getCriatura(j).getID()
 								+ "," + jugadores.getJugador(i).getCriatura(j).getSalud() + ")";
 					}
-
 				}
 
 				if (i == 0) {
@@ -397,10 +346,7 @@ public class Batalla {
 		}
 
 		// Fin batalla, criaturas no neutralizadas a recuperarse
-
-		for (i = 0; i < jugadores.getNumJugadores(); i++)
-
-		{
+		for (i = 0; i < jugadores.getNumJugadores(); i++) {
 			for (Criatura c : jugadores.getJugador(i).getCriaturas()) {
 				if (c.getSalud() > 0) {
 					if (c instanceof UsuarioLagoSagrado) {
@@ -413,7 +359,6 @@ public class Batalla {
 		}
 
 		// Criaturas al bosque
-
 		for (i = 0; i < jugadores.getNumJugadores(); i++) {
 			for (Criatura c : jugadores.getJugador(i).getCriaturas()) {
 				bosque.anadirCriatura(c);

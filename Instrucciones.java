@@ -10,11 +10,8 @@ public class Instrucciones {
 	public Instrucciones(String nombreFicheroInstrucciones, boolean salidaFichero, String nombreSalida) {
 
 		Bosque bosque = new Bosque();
-
 		Jugadores jugadores = new Jugadores();
-
 		LagoSagrado lago = new LagoSagrado();
-
 		TemploMaldito templo = new TemploMaldito();
 
 		Scanner entrada = null;
@@ -31,7 +28,6 @@ public class Instrucciones {
 		PrintWriter salida = null;
 
 		if (salidaFichero == true) {
-
 			try {
 				salida = new PrintWriter(nombreSalida);
 			} catch (FileNotFoundException e) {
@@ -39,7 +35,6 @@ public class Instrucciones {
 		}
 
 		while (entrada.hasNextLine()) {
-
 			linea = entrada.nextLine();
 
 			if (linea.isEmpty() == true) {
@@ -55,7 +50,6 @@ public class Instrucciones {
 			String instruccion = partes[0];
 
 			switch (instruccion) {
-
 				case "CargarJugadores":
 					error = cargarJugadores(partes[1], jugadores);
 					if (error == false) {
@@ -72,6 +66,7 @@ public class Instrucciones {
 						}
 					}
 					break;
+
 				case "CrearJugador":
 					String nombre = "";
 					for (int i = 0; i < partes.length - 2; i++) {
@@ -96,6 +91,7 @@ public class Instrucciones {
 						}
 					}
 					break;
+
 				case "BorrarJugador":
 					error = borrarJugador(partes[1], jugadores);
 					if (error == false) {
@@ -112,6 +108,7 @@ public class Instrucciones {
 						}
 					}
 					break;
+
 				case "VolcarJugadores":
 					error = volcarJugadores(partes[1], jugadores);
 					if (error == false) {
@@ -128,6 +125,7 @@ public class Instrucciones {
 						}
 					}
 					break;
+
 				case "CargarCriaturas":
 					error = cargarCriaturas(partes[1], bosque);
 					if (error == false) {
@@ -144,6 +142,7 @@ public class Instrucciones {
 						}
 					}
 					break;
+
 				case "CrearNinfa":
 					error = crearNinfa(partes[1], partes[2], Integer.parseInt(partes[3]), Integer.parseInt(partes[4]),
 							Integer.parseInt(partes[5]), Integer.parseInt(partes[6]), Integer.parseInt(partes[7]),
@@ -168,6 +167,7 @@ public class Instrucciones {
 						}
 					}
 					break;
+
 				case "CrearOrco":
 					error = crearOrco(partes[1], partes[2], Integer.parseInt(partes[3]), Integer.parseInt(partes[4]),
 							Integer.parseInt(partes[5]), bosque);
@@ -191,6 +191,7 @@ public class Instrucciones {
 						}
 					}
 					break;
+
 				case "CrearBruja":
 					error = crearBruja(partes[1], partes[2], Integer.parseInt(partes[3]), Integer.parseInt(partes[4]),
 							Integer.parseInt(partes[5]), Integer.parseInt(partes[6]), bosque);
@@ -214,6 +215,7 @@ public class Instrucciones {
 						}
 					}
 					break;
+
 				case "CrearElfo":
 					error = crearElfo(partes[1], partes[2], Integer.parseInt(partes[3]), Integer.parseInt(partes[4]),
 							Integer.parseInt(partes[5]), bosque);
@@ -237,6 +239,7 @@ public class Instrucciones {
 						}
 					}
 					break;
+
 				case "BorrarCriatura":
 					error = borrarCriatura(partes[1], bosque);
 					if (error == false) {
@@ -253,6 +256,7 @@ public class Instrucciones {
 						}
 					}
 					break;
+
 				case "VolcarCriaturas":
 					error = volcarCriaturas(partes[1], bosque);
 					if (error == false) {
@@ -269,6 +273,7 @@ public class Instrucciones {
 						}
 					}
 					break;
+
 				case "MostrarCriatura":
 					Criatura criatura = mostrarCriatura(partes[1], bosque);
 					if (criatura != null) {
@@ -285,6 +290,7 @@ public class Instrucciones {
 						}
 					}
 					break;
+
 				case "Atacar":
 					error = atacar(partes[1], partes[2], bosque);
 					if (error == false) {
@@ -301,6 +307,7 @@ public class Instrucciones {
 						}
 					}
 					break;
+
 				case "VisitarLugarSagrado":
 					error = visitarLugarSagrado(partes[1], bosque, lago, templo);
 					if (error == false) {
@@ -317,6 +324,7 @@ public class Instrucciones {
 						}
 					}
 					break;
+
 				case "GenerarAsignacionCriaturas":
 					error = generarAsignacionCriaturas(Integer.parseInt(partes[1]), partes[2], bosque, jugadores);
 					if (error == false) {
@@ -333,6 +341,7 @@ public class Instrucciones {
 						}
 					}
 					break;
+
 				case "JugarPartida":
 					error = jugarPartida(partes[1], partes[2], bosque, jugadores, lago, templo);
 					if (error == false) {
@@ -349,6 +358,7 @@ public class Instrucciones {
 						}
 					}
 					break;
+
 				case "CriaturaMasOfensiva":
 
 					if (bosque.getNumCriaturas() == 0) {
@@ -370,7 +380,6 @@ public class Instrucciones {
 			}
 		}
 		salida.close();
-
 	}
 
 	public boolean cargarJugadores(String nombreFichero, Jugadores jugadores) {
@@ -446,7 +455,6 @@ public class Instrucciones {
 	}
 
 	public boolean generarAsignacionCriaturas(int num, String nombreFichero, Bosque bosque, Jugadores jugadores) {
-
 		if (jugadores.getNumJugadores() == 0) {
 			return true;
 		}
@@ -471,9 +479,7 @@ public class Instrucciones {
 		ArrayList<Criatura> listaCriaturas = bosque.getListaCriaturas();
 
 		for (i = 0; i < num; i++) {
-
 			for (j = 0; j < jugadores.getNumJugadores(); j++) {
-
 				if (j == 0) {
 					salida.println(jugadores.getJugador(j).getID() + ":{");
 				} else {
@@ -481,7 +487,6 @@ public class Instrucciones {
 				}
 
 				for (k = 0; k < criaturasPorJugador; k++) {
-
 					numRandom = rand.nextInt(bosque.getNumCriaturas());
 
 					if (k == 0) {
@@ -499,7 +504,6 @@ public class Instrucciones {
 			}
 			salida.println("\n");
 		}
-
 		return false;
 	}
 

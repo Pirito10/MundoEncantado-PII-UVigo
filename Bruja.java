@@ -1,4 +1,3 @@
-
 public class Bruja extends Criatura implements UsuarioTemploMaldito {
 
 	private int sabiduria;
@@ -25,7 +24,6 @@ public class Bruja extends Criatura implements UsuarioTemploMaldito {
 	}
 
 	public void atacar(Criatura defensor) {
-
 		defensor.defender(this);
 
 		if ((getSalud() - 2) >= 0) {
@@ -39,11 +37,11 @@ public class Bruja extends Criatura implements UsuarioTemploMaldito {
 		} else {
 			baston = 1;
 		}
+
 		calcularPoderOfensivo();
 	}
 
 	public void defender(Criatura atacante) {
-
 		if ((atacante.getPoderOfensivo() - getCapacidadDefensiva()) > 0) {
 			setSalud(getSalud() - (atacante.getPoderOfensivo() - getCapacidadDefensiva()));
 		}
@@ -59,12 +57,13 @@ public class Bruja extends Criatura implements UsuarioTemploMaldito {
 		} else {
 			vestido = 1;
 		}
+
 		calcularCapacidadDefensiva();
 	}
 
 	public void visitarTemploMaldito(TemploMaldito templo) {
-
 		setVisitas(getVisitas() + 1);
+
 		if ((baston + ((2 + getVisitas()) / 2)) <= 10) {
 			baston = baston + ((2 + getVisitas()) / 2);
 		} else {
@@ -76,6 +75,7 @@ public class Bruja extends Criatura implements UsuarioTemploMaldito {
 		} else {
 			vestido = 10;
 		}
+
 		calcularPoderOfensivo();
 		calcularCapacidadDefensiva();
 		templo.anadirVisita(this);
@@ -90,5 +90,4 @@ public class Bruja extends Criatura implements UsuarioTemploMaldito {
 		return "B:{" + getID() + "," + getNombre() + ",S" + sabiduria + ",M" + magia + ",B" + baston + ",V" + vestido
 				+ "," + getPoderOfensivo() + "," + getCapacidadDefensiva() + "," + getSalud() + "}";
 	}
-
 }

@@ -6,7 +6,6 @@ public class TemploMaldito {
 	private ArrayList<Criatura> libroVisitas = new ArrayList<Criatura>();
 
 	public void anadirVisita(Criatura criatura) {
-
 		if (libroVisitas.size() == 0) {
 			libroVisitas.add(criatura);
 			return;
@@ -17,14 +16,13 @@ public class TemploMaldito {
 				c.setVisitas(criatura.getVisitas());
 				return;
 			}
-
 		}
+
 		libroVisitas.add(criatura);
 		return;
 	}
 
 	public String mostrarVisitas() {
-
 		String visitas = "";
 		int i = 0;
 

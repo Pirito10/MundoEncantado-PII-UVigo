@@ -1,4 +1,3 @@
-
 public class Ninfa extends Criatura implements UsuarioLagoSagrado {
 
 	private int divinidad; // Atributos propios
@@ -27,7 +26,6 @@ public class Ninfa extends Criatura implements UsuarioLagoSagrado {
 	}
 
 	public void atacar(Criatura defensor) {
-
 		defensor.defender(this); // Se llama a la otra criatura a defenderse
 
 		if ((getSalud() - 2) >= 0) {
@@ -41,6 +39,7 @@ public class Ninfa extends Criatura implements UsuarioLagoSagrado {
 		} else {
 			varita = 0;
 		}
+
 		calcularPoderOfensivo();
 	}
 
@@ -61,12 +60,13 @@ public class Ninfa extends Criatura implements UsuarioLagoSagrado {
 		} else {
 			armadura = 0;
 		}
+
 		calcularCapacidadDefensiva();
 	}
 
 	public void visitarLagoSagrado(LagoSagrado lago) {
-
 		setVisitas(getVisitas() + 1);
+
 		if ((getSalud() + (2 + getVisitas() * 2)) <= 10) {
 			setSalud(getSalud() + (2 + getVisitas() * 2));
 		} else {
@@ -99,5 +99,4 @@ public class Ninfa extends Criatura implements UsuarioLagoSagrado {
 		return "N:{" + getID() + "," + getNombre() + ",D" + divinidad + ",V" + varita + ",R" + velocidad + ",E" + engano
 				+ ",A" + armadura + "," + getPoderOfensivo() + "," + getCapacidadDefensiva() + "," + getSalud() + "}";
 	}
-
 }

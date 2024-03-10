@@ -1,4 +1,3 @@
-
 public class Orco extends Criatura implements UsuarioTemploMaldito {
 
 	private int fuerza; // Atributos propios
@@ -23,7 +22,6 @@ public class Orco extends Criatura implements UsuarioTemploMaldito {
 	}
 
 	public void atacar(Criatura defensor) {
-
 		defensor.defender(this);
 
 		if ((getSalud() - 1) >= 0) {
@@ -37,11 +35,11 @@ public class Orco extends Criatura implements UsuarioTemploMaldito {
 		} else {
 			garrote = 0;
 		}
+
 		calcularPoderOfensivo();
 	}
 
 	public void defender(Criatura atacante) {
-
 		if ((atacante.getPoderOfensivo() - getCapacidadDefensiva()) > 0) {
 			setSalud(getSalud() - (atacante.getPoderOfensivo() - getCapacidadDefensiva()));
 		}
@@ -57,12 +55,13 @@ public class Orco extends Criatura implements UsuarioTemploMaldito {
 		} else {
 			escudo = 0;
 		}
+
 		calcularCapacidadDefensiva();
 	}
 
 	public void visitarTemploMaldito(TemploMaldito templo) {
-
 		setVisitas(getVisitas() + 1);
+
 		if ((garrote + (2 * getVisitas())) <= 90) {
 			garrote = garrote + (2 * getVisitas());
 		} else {
@@ -74,6 +73,7 @@ public class Orco extends Criatura implements UsuarioTemploMaldito {
 		} else {
 			escudo = 90;
 		}
+
 		calcularPoderOfensivo();
 		calcularCapacidadDefensiva();
 		templo.anadirVisita(this);

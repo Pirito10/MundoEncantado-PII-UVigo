@@ -11,7 +11,6 @@ public class Bosque {
 	private ArrayList<Criatura> criaturas = new ArrayList<Criatura>();
 
 	public Bosque() {
-
 	}
 
 	public Bosque(String nombreFichero) {
@@ -23,7 +22,6 @@ public class Bosque {
 	}
 
 	public boolean leerFichero(String nombreFichero) {
-
 		Scanner entrada = null;
 		String linea;
 
@@ -34,7 +32,6 @@ public class Bosque {
 		}
 
 		while (entrada.hasNextLine()) {
-
 			linea = entrada.nextLine();
 
 			String[] partes = linea.split(",");
@@ -126,7 +123,6 @@ public class Bosque {
 	}
 
 	public boolean volcarCriaturas(String nombreFichero) {
-
 		Collections.sort(criaturas);
 
 		PrintWriter salida;
@@ -169,15 +165,11 @@ public class Bosque {
 		} else {
 			return true;
 		}
-
 	}
 
 	public boolean visitarLugarSagrado(String ID, LagoSagrado lago, TemploMaldito templo) {
-
 		for (Criatura c : criaturas) {
-
 			if (c.getID().equals(ID)) {
-
 				if (c instanceof UsuarioLagoSagrado) {
 					((UsuarioLagoSagrado) c).visitarLagoSagrado(lago);
 				} else {
@@ -197,5 +189,4 @@ public class Bosque {
 		}
 		return true;
 	}
-
 }

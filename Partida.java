@@ -14,7 +14,6 @@ public class Partida {
 
 		// Si hay reparto, calcular cuantas lineas hay
 		if (reparto == true) {
-
 			Scanner entrada = null;
 
 			try {
@@ -34,7 +33,6 @@ public class Partida {
 		PrintWriter salida = null;
 
 		// Si hay partida, crear fichero
-
 		if (partida == true) {
 			try {
 				salida = new PrintWriter(nombreFicheroPartida);
@@ -44,9 +42,7 @@ public class Partida {
 		}
 
 		while (fin == false) {
-
 			// Se celebra una batalla
-
 			Batalla batalla = new Batalla(bosque, jugadores, lago, templo, reparto, nombreFicheroReparto, numLinea,
 					partida, numBatalla);
 
@@ -102,12 +98,9 @@ public class Partida {
 					System.out.println(puntuaciones);
 				}
 			}
-
 		}
 		if (partida == true) {
 			salida.close();
 		}
-
 	}
-
 }

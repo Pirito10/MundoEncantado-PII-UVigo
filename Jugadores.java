@@ -9,7 +9,6 @@ public class Jugadores {
 	private ArrayList<Jugador> jugadores = new ArrayList<Jugador>();
 
 	public Jugadores() {
-
 	}
 
 	public Jugadores(String nombreFichero) {
@@ -17,7 +16,6 @@ public class Jugadores {
 	}
 
 	public boolean leerFichero(String nombreFichero) {
-
 		Scanner entrada = null;
 		String linea;
 		boolean anadido;
@@ -29,7 +27,6 @@ public class Jugadores {
 		}
 
 		while (entrada.hasNextLine()) {
-
 			anadido = false;
 
 			linea = entrada.nextLine();
@@ -95,7 +92,6 @@ public class Jugadores {
 	}
 
 	public boolean volcarJugadores(String nombreFichero) {
-
 		PrintWriter salida;
 
 		try {
@@ -123,7 +119,6 @@ public class Jugadores {
 	}
 
 	public String toString() { // Representar coleccion
-
 		String resultado = ""; // Variable que se retornara con la informacion de las ninfas
 
 		if (jugadores.size() == 0) { // Si la lista esta vacia, se informa de ello y no se hace nada mas

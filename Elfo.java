@@ -1,4 +1,3 @@
-
 public class Elfo extends Criatura implements UsuarioLagoSagrado {
 
 	private int inteligencia;
@@ -23,7 +22,6 @@ public class Elfo extends Criatura implements UsuarioLagoSagrado {
 	}
 
 	public void atacar(Criatura defensor) {
-
 		defensor.defender(this);
 
 		if ((getSalud() - 3) >= 0) {
@@ -43,12 +41,12 @@ public class Elfo extends Criatura implements UsuarioLagoSagrado {
 		} else {
 			coraza = 1;
 		}
+
 		calcularPoderOfensivo();
 		calcularCapacidadDefensiva();
 	}
 
 	public void defender(Criatura atacante) {
-
 		if ((atacante.getPoderOfensivo() - getCapacidadDefensiva()) > 0) {
 			setSalud(getSalud() - (atacante.getPoderOfensivo() - getCapacidadDefensiva()));
 		}
@@ -70,13 +68,14 @@ public class Elfo extends Criatura implements UsuarioLagoSagrado {
 		} else {
 			coraza = 1;
 		}
+
 		calcularPoderOfensivo();
 		calcularCapacidadDefensiva();
 	}
 
 	public void visitarLagoSagrado(LagoSagrado lago) {
-
 		setVisitas(getVisitas() + 1);
+
 		if ((getSalud() + (3 * getVisitas())) <= 10) {
 			setSalud(getSalud() + (3 * getVisitas()));
 		} else {
@@ -94,6 +93,7 @@ public class Elfo extends Criatura implements UsuarioLagoSagrado {
 		} else {
 			coraza = 5;
 		}
+
 		calcularPoderOfensivo();
 		calcularCapacidadDefensiva();
 		lago.anadirVisita(this);

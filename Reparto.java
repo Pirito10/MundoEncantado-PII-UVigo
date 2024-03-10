@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class Reparto {
 
 	public Reparto(String nombreFichero, int numLinea, Bosque bosque, Jugadores jugadores) {
-
 		Scanner entrada = null;
 		String linea;
 
@@ -19,10 +18,8 @@ public class Reparto {
 		}
 
 		do {
-
 			linea = entrada.nextLine();
 			i++;
-
 		} while (i <= numLinea);
 
 		String[] partes = linea.split("}");
@@ -36,17 +33,12 @@ public class Reparto {
 		}
 
 		for (i = 0; i < jugadores.getNumJugadores(); i++) {
-
 			String[] subpartes = partes[i].split(",");
 
 			for (j = 0; j < subpartes.length; j++) {
-
 				Criatura c = bosque.getCriatura(subpartes[j]);
 				jugadores.getJugador(i).anadirCriatura(c);
-
 			}
 		}
-
 	}
-
 }
