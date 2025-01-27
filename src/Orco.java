@@ -1,3 +1,5 @@
+package src;
+
 public class Orco extends Criatura implements UsuarioTemploMaldito {
 
 	private int fuerza; // Atributos propios

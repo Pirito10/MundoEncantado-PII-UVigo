@@ -1,3 +1,5 @@
+package src;
+
 public class Bruja extends Criatura implements UsuarioTemploMaldito {
 
 	private int sabiduria;

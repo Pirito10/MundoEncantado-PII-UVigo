@@ -1,3 +1,5 @@
+package src;
+
 import java.util.Comparator;
 
 public abstract class Criatura implements Comparable<Criatura> { // Clase padre de las criaturas

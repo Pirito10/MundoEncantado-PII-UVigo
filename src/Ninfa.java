@@ -1,3 +1,5 @@
+package src;
+
 public class Ninfa extends Criatura implements UsuarioLagoSagrado {
 
 	private int divinidad; // Atributos propios

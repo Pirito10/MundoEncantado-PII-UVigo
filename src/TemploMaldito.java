@@ -1,7 +1,9 @@
+package src;
+
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class LagoSagrado {
+public class TemploMaldito {
 
 	private ArrayList<Criatura> libroVisitas = new ArrayList<Criatura>();
 
@@ -16,7 +18,6 @@ public class LagoSagrado {
 				c.setVisitas(criatura.getVisitas());
 				return;
 			}
-
 		}
 
 		libroVisitas.add(criatura);
