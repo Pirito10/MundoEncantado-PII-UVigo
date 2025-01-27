@@ -48,7 +48,7 @@ java -cp bin MundoEncantado -i f_instrucciones [-o f_salida]
 java -cp bin MundoEncantado -i test/instrucciones.txt -o output.txt
 ```
 
-# About The Code
+## About The Code
 Refer to [**Especificaciones.pdf**](Especificaciones.pdf) for an in-depth explanation of the project, how the game works, the multiple ways of running the game, example files to use, and more.
 
 _The current version is 1.0.0, so changes related to version 2.0.0 are not implemented._
