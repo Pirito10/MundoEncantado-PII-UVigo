@@ -1,0 +1,10 @@
+jA:{b0,b3,n1},jB:{b1,n2,o3},jC:{e3,n3,o1}
+jA:{b0,e2,n0},jB:{e0,e1,o1},jC:{b2,n1,o0}
+jA:{n0,n1,o0},jB:{e1,n3,o2},jC:{b1,b3,e0}
+jA:{b2,n2,n3},jB:{b1,e1,n1},jC:{b0,e0,o3}
+jA:{e1,n3,o3},jB:{b0,b2,b3},jC:{e0,n2,o0}
+jA:{b0,e3,n1},jB:{e2,n3,o0},jC:{n0,o1,o2}
+jA:{b3,n2,o0},jB:{n0,n1,o1},jC:{b2,e2,o2}
+jA:{e0,n2,o0},jB:{b2,e3,o3},jC:{b3,n1,o1}
+jA:{b0,o0,o3},jB:{e0,n3,o2},jC:{e2,n1,n2}
+jA:{e1,o2,o3},jB:{e2,e3,n3},jC:{b2,e0,n1}
