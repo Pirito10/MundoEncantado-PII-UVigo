@@ -24,11 +24,12 @@ Once compiled, you can run the game in one of two modes: **Normal Mode** or **In
 ```bash
 java -cp bin MundoEncantado -j f_jugadores -c f_criaturas [-r f_reparto] [-o f_partida]
 ```
-##### Options
-- `-j f_jugadores`: specifies the file containing player data (e.g., `jugadores.txt`).
-- `-c f_criaturas`: specifies the file containing creature data (e.g., `criaturas.txt`).
-- `-r f_reparto` _(optional)_: specifies the file containing the allocation of creatures to players (e.g., `reparto.txt`).
-- `-o f_partida` _(optional)_: specifies the file where the results of the game will be written.
+| Option | Optional | Description |
+|--------|----------|-------------|
+| `-j f_jugadores` | No | Specifies the file containing player data |
+| `-c f_criaturas` | No | Specifies the file containing creature data |
+| `-r f_reparto` | Yes | Specifies the file containing the allocation of creatures to players  |
+| `-o f_partida` | Yes | Specifies the file where the results of the game will be written |
 ##### Example
 ```bash
 java -cp bin MundoEncantado -j test/jugadores.txt -c test/criaturas.txt -r test/reparto.txt -o output.txt
@@ -38,9 +39,10 @@ java -cp bin MundoEncantado -j test/jugadores.txt -c test/criaturas.txt -r test/
 ```bash
 java -cp bin MundoEncantado -i f_instrucciones [-o f_salida]
 ```
-##### Options
-- `-i f_instrucciones`: specifies the file containing instructions for the game execution (e.g., `instrucciones.txt`).
-- `-o f_salida` _(optional)_: specifies the file where the results of the game will be written.
+| Option | Optional | Description |
+|--------|----------|-------------|
+| `-i f_instrucciones` | No | Specifies the file containing instructions for the game execution |
+| `-o f_salida` | Yes | Specifies the file where the results of the game will be written |
 ##### Example
 ```bash
 java -cp bin MundoEncantado -i test/instrucciones.txt -o output.txt
