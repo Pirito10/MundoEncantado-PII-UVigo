@@ -11,7 +11,7 @@ The project features:
 
 ## How To Run
 ### Compilation
-To compile all Java classes and generate the `.class` files, run:
+Make sure you have a Java JDK installed on your system. Then compile all Java classes and generate the `.class` files with:
 ```bash
 javac -d bin src/*.java
 ```
