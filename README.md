@@ -24,12 +24,12 @@ Once compiled, you can run the game in one of two modes: **Normal Mode** or **In
 ```bash
 java -cp bin MundoEncantado -j f_jugadores -c f_criaturas [-r f_reparto] [-o f_partida]
 ```
-| Option | Optional | Description |
-|--------|----------|-------------|
-| `-j f_jugadores` | No | Specifies the file containing player data |
-| `-c f_criaturas` | No | Specifies the file containing creature data |
-| `-r f_reparto` | Yes | Specifies the file containing the allocation of creatures to players  |
-| `-o f_partida` | Yes | Specifies the file where the results of the game will be written |
+| Option | Optional | Description | Example |
+|--------|----------|-------------|---------|
+| `-j f_jugadores` | No | Specifies the file containing player data | `jugadores.txt` |
+| `-c f_criaturas` | No | Specifies the file containing creature data | `criaturas.txt` |
+| `-r f_reparto` | Yes | Specifies the file containing the allocation of creatures to players  | `reparto.txt` |
+| `-o f_partida` | Yes | Specifies the file where the results of the game will be written | `partida.txt` |
 ##### Example
 ```bash
 java -cp bin MundoEncantado -j test/jugadores.txt -c test/criaturas.txt -r test/reparto.txt -o output.txt
@@ -39,10 +39,10 @@ java -cp bin MundoEncantado -j test/jugadores.txt -c test/criaturas.txt -r test/
 ```bash
 java -cp bin MundoEncantado -i f_instrucciones [-o f_salida]
 ```
-| Option | Optional | Description |
-|--------|----------|-------------|
-| `-i f_instrucciones` | No | Specifies the file containing instructions for the game execution |
-| `-o f_salida` | Yes | Specifies the file where the results of the game will be written |
+| Option | Optional | Description | Example |
+|--------|----------|-------------|---------|
+| `-i f_instrucciones` | No | Specifies the file containing instructions for the game execution | `instrucciones.txt` |
+| `-o f_salida` | Yes | Specifies the file where the results of the game will be written | `salida.txt` |
 ##### Example
 ```bash
 java -cp bin MundoEncantado -i test/instrucciones.txt -o output.txt
