@@ -22,14 +22,10 @@ public class Reparto {
 			i++;
 		} while (i <= numLinea);
 
-		String[] partes = linea.split("}");
+		String[] partes = linea.split("},");
 
 		for (i = 0; i < partes.length; i++) {
-			if (i == 0) {
-				partes[0] = partes[0].substring(4);
-			} else {
-				partes[i] = partes[i].substring(5);
-			}
+			partes[i] = partes[i].substring(partes[i].indexOf("{") + 1).replace("}", "");
 		}
 
 		for (i = 0; i < jugadores.getNumJugadores(); i++) {
