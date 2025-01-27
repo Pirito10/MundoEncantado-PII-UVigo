@@ -18,7 +18,7 @@ javac -d bin src/*.java
 This command creates the compiled files inside the `bin/` directory.
 
 ### Execution
-Once compiled, you can run the game in one of two modes: **Normal Mode** or **Instructions Mode**. Below are detailed explanations of both modes.
+Once compiled, you can run the game in one of two modes: **Normal Mode** or **Instructions Mode**.
 
 #### Normal Mode
 ```bash
@@ -33,7 +33,7 @@ java -cp bin MundoEncantado -j f_jugadores -c f_criaturas [-r f_reparto] [-o f_p
 ```bash
 java -cp bin MundoEncantado -j test/jugadores.txt -c test/criaturas.txt -r test/reparto.txt -o output.txt
 ```
-
+---
 #### Instructions Mode
 ```bash
 java -cp bin MundoEncantado -i f_instrucciones [-o f_salida]
