@@ -24,7 +24,7 @@ Once compiled, you can run the game in one of two modes: **Normal Mode** or **In
 ```bash
 java -cp bin MundoEncantado -j f_jugadores -c f_criaturas [-r f_reparto] [-o f_partida]
 ```
-| Option | Optional | Description | Example |
+| Option | Required | Description | Example |
 |--------|----------|-------------|---------|
 | `-j f_jugadores` | No | Specifies the file containing player data | `jugadores.txt` |
 | `-c f_criaturas` | No | Specifies the file containing creature data | `criaturas.txt` |
@@ -39,7 +39,7 @@ java -cp bin MundoEncantado -j test/jugadores.txt -c test/criaturas.txt -r test/
 ```bash
 java -cp bin MundoEncantado -i f_instrucciones [-o f_salida]
 ```
-| Option | Optional | Description | Example |
+| Option | Required | Description | Example |
 |--------|----------|-------------|---------|
 | `-i f_instrucciones` | No | Specifies the file containing instructions for the game execution | `instrucciones.txt` |
 | `-o f_salida` | Yes | Specifies the file where the results of the game will be written | `salida.txt` |
