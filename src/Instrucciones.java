@@ -464,54 +464,50 @@ public class Instrucciones {
 		}
 
 		int i, j, k, criaturasPorJugador;
-		PrintWriter salida;
 		Random rand = new Random();
 		int numRandom;
 
-		try {
-			salida = new PrintWriter(nombreFichero);
+		try (PrintWriter salida = new PrintWriter(nombreFichero)) {
+
+			criaturasPorJugador = bosque.getNumCriaturas() / jugadores.getNumJugadores();
+
+			for (i = 0; i < num; i++) {
+				ArrayList<Criatura> listaCriaturas = new ArrayList<>(bosque.getListaCriaturas());
+				for (j = 0; j < jugadores.getNumJugadores(); j++) {
+					if (j == 0) {
+						salida.print(jugadores.getJugador(j).getID() + ":{");
+					} else {
+						salida.print("," + jugadores.getJugador(j).getID() + ":{");
+					}
+
+					for (k = 0; k < criaturasPorJugador; k++) {
+						numRandom = rand.nextInt(listaCriaturas.size());
+
+						if (k == 0) {
+							Criatura criatura = listaCriaturas.get(numRandom);
+							listaCriaturas.remove(numRandom);
+							salida.print(criatura.getID());
+						} else {
+							Criatura criatura = listaCriaturas.get(numRandom);
+							listaCriaturas.remove(numRandom);
+							salida.print("," + criatura.getID());
+						}
+					}
+					salida.print("}");
+				}
+				salida.print("\n");
+			}
+			return false;
 		} catch (FileNotFoundException e) {
 			return true;
 		}
-
-		criaturasPorJugador = bosque.getNumCriaturas() / jugadores.getNumJugadores();
-
-		ArrayList<Criatura> listaCriaturas = bosque.getListaCriaturas();
-
-		for (i = 0; i < num; i++) {
-			for (j = 0; j < jugadores.getNumJugadores(); j++) {
-				if (j == 0) {
-					salida.println(jugadores.getJugador(j).getID() + ":{");
-				} else {
-					salida.println("," + jugadores.getJugador(j).getID() + ":{");
-				}
-
-				for (k = 0; k < criaturasPorJugador; k++) {
-					numRandom = rand.nextInt(bosque.getNumCriaturas());
-
-					if (k == 0) {
-						Criatura criatura = listaCriaturas.get(numRandom);
-						listaCriaturas.remove(numRandom);
-						salida.println(criatura.getID());
-					} else {
-						Criatura criatura = listaCriaturas.get(numRandom);
-						listaCriaturas.remove(numRandom);
-						salida.println("," + criatura.getID());
-					}
-				}
-
-				salida.println("}");
-			}
-			salida.println("\n");
-		}
-		return false;
 	}
 
 	public boolean jugarPartida(String nombreFicheroReparto, String nombreFicheroPartida, Bosque bosque,
 			Jugadores jugadores, LagoSagrado lago, TemploMaldito templo) {
 		boolean error = false;
 		new Partida(bosque, jugadores, lago, templo, true, nombreFicheroReparto, true, nombreFicheroPartida, error);
-		return true;
+		return error;
 	}
 
 	public Criatura criaturaMasOfensiva(Bosque bosque) {
