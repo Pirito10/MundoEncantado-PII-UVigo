@@ -1,0 +1,19 @@
+#######################################
+# Fichero de instrucciones de ejemplo #
+#######################################
+
+# Creamos algunos jugadores
+CrearJugador J01 Pepa Blanco
+CrearJugador J02 Antonio Cuadrado
+
+# Creamos algunas criaturas
+CrearNinfa c1 Etiopia 2 1 1 500 500
+CrearOrco c2 Grom 8 90 20
+CrearBruja c3 Bellatrix 3 4 7 6
+CrearElfo c4 Ataulfo 2 3 4
+
+# Generamos fichero de asignación de criaturas a jugadores
+GenerarAsignacionCriaturas 100 mireparto.txt
+
+# Jugamos partida
+JugarPartida mireparto.txt mipartida.txt
