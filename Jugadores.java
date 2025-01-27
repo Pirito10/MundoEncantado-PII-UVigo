@@ -51,6 +51,7 @@ public class Jugadores {
 				jugadores.add(new Jugador(partes[0], partes[1].substring(1, partes[1].length())));
 			}
 		}
+		entrada.close();
 		return false;
 	}
 

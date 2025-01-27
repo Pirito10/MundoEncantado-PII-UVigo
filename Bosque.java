@@ -74,6 +74,7 @@ public class Bosque {
 					break;
 			}
 		}
+		entrada.close();
 		return false;
 	}
 
