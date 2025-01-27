@@ -1,19 +1,52 @@
-# About The Project
+# Mundo Encantado
+Mundo Encantado is a **Role-Playing Game** developed as part of the course "[Programación II](https://secretaria.uvigo.gal/docnet-nuevo/guia_docent/index.php?centre=305&ensenyament=V05G301V01&assignatura=V05G301V01110&any_academic=2019_20)" in the Telecommunications Engineering Degree at the Universidad de Vigo (2019 - 2020).
 
-Mundo Encantado (Role-Playing Game) project for "[Programación II](https://secretaria.uvigo.gal/docnet-nuevo/guia_docent/index.php?centre=305&ensenyament=V05G301V01&assignatura=V05G301V01110&any_academic=2019_20)" subject in Telecommunications Engineering Degree at Universidad de Vigo (2019 - 2020)
+## About The Project
+This project simulates an enchanted world where players compete by managing creatures in a magical environment. The game incorporates concepts of object-oriented programming such as inheritance, polymorphism, and encapsulation, which were key learning objectives of the course.
 
-# Building The Project
+The project features:
+- A turn-based game system where players use creatures to battle.
+- Modular design for extensibility.
+- Text-based input/output using predefined files for creatures, players, and gameplay.
 
-- Run the following command to compile every .java into a .class file: `javac -d ./build *.java`
+## How To Run
+### Compilation
+To compile all Java classes and generate the `.class` files, run:
+```bash
+javac -d bin src/*.java
+```
+This command creates the compiled files inside the `bin/` directory.
 
-  - Now you can run `java MundoEncantado [args]` inside the build directory to run the game.
+### Execution
+Once compiled, you can run the game in one of two modes: **Normal Mode** or **Instructions Mode**. Below are detailed explanations of both modes.
 
-  - Or you can package everything in to a single .jar file with the following command, also inside the build directory: `jar cfm MundoEncando.jar manifest.txt *`
+#### Normal Mode
+```bash
+java -cp bin MundoEncantado -j f_jugadores -c f_criaturas [-r f_reparto] [-o f_partida]
+```
+##### Options
+- `-j f_jugadores`: specifies the file containing player data (e.g., `jugadores.txt`).
+- `-c f_criaturas`: specifies the file containing creature data (e.g., `criaturas.txt`).
+- `-r f_reparto` _(optional)_: specifies the file containing the allocation of creatures to players (e.g., `reparto.txt`).
+- `-o f_partida` _(optional)_: specifies the file where the results of the game will be written.
+##### Example
+```bash
+java -cp bin MundoEncantado -j test/jugadores.txt -c test/criaturas.txt -r test/reparto.txt -o output.txt
+```
 
-    - And then run the game with `java -jar MundoEncando.jar [args]`
+#### Instructions Mode
+```bash
+java -cp bin MundoEncantado -i f_instrucciones [-o f_salida]
+```
+##### Options
+- `-i f_instrucciones`: specifies the file containing instructions for the game execution (e.g., `instrucciones.txt`).
+- `-o f_salida` _(optional)_: specifies the file where the results of the game will be written.
+##### Example
+```bash
+java -cp bin MundoEncantado -i test/instrucciones.txt -o output.txt
+```
 
 # About The Code
-
 Refer to [**Especificaciones.pdf**](Especificaciones.pdf) for an in-depth explanation of the project, how the game works, the multiple ways of running the game, example files to use, and more.
 
-The current version is 1.0.0, so changes related to version 2.0.0 are not implemented.
+_The current version is 1.0.0, so changes related to version 2.0.0 are not implemented._
