@@ -1,5 +1,3 @@
-package src;
-
 public class MundoEncantado {
 	public static void main(String[] args) { // Main
 

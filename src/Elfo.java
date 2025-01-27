@@ -1,5 +1,3 @@
-package src;
-
 public class Elfo extends Criatura implements UsuarioLagoSagrado {
 
 	private int inteligencia;
