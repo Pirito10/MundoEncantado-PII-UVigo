@@ -26,10 +26,10 @@ java -cp bin MundoEncantado <-j f_jugadores> <-c f_criaturas> [-r f_reparto] [-o
 ```
 | Option | Description | Example |
 |--------|-------------|---------|
-| `-j f_jugadores` | Specifies the file containing player data | `-j jugadores.txt` |
-| `-c f_criaturas` | Specifies the file containing creature data | `-c criaturas.txt` |
-| `-r f_reparto` | Specifies the file containing the allocation of creatures to players  | `-r reparto.txt` |
-| `-o f_partida` | Specifies the file where the results of the game will be written | `-o partida.txt` |
+| `-j f_jugadores` | File containing player data | `-j jugadores.txt` |
+| `-c f_criaturas` | File containing creature data | `-c criaturas.txt` |
+| `-r f_reparto` | File containing the allocation of creatures to players  | `-r reparto.txt` |
+| `-o f_partida` | File where the results of the game will be written | `-o partida.txt` |
 ##### Example
 ```bash
 java -cp bin MundoEncantado -j test/jugadores.txt -c test/criaturas.txt -r test/reparto.txt -o output.txt
@@ -41,8 +41,8 @@ java -cp bin MundoEncantado <-i f_instrucciones> [-o f_salida]
 ```
 | Option | Description | Example |
 |--------|-------------|---------|
-| `-i f_instrucciones` | Specifies the file containing instructions for the game execution | `-i instrucciones.txt` |
-| `-o f_salida` | Specifies the file where the results of the game will be written | `-o salida.txt` |
+| `-i f_instrucciones` | File containing instructions for the game execution | `-i instrucciones.txt` |
+| `-o f_salida` | File where the results of the game will be written | `-o salida.txt` |
 ##### Example
 ```bash
 java -cp bin MundoEncantado -i test/instrucciones.txt -o output.txt
